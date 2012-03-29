@@ -52,7 +52,13 @@
 
 {% block genemu_jqueryautocompleter_widget %}
 {% spaceless %}
+    {% set attr = {} %}
+    {% set defaultRequired = required %}
+    {% set required = false %}
+
     {{ block("hidden_widget") }}
+
+    {% set required = defaultRequired %}
 
     {% set id = "autocompleter_" ~ id %}
     {% set full_name = "autocompleter_" ~ full_name %}
